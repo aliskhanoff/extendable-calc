@@ -8,7 +8,7 @@ export default defineConfig({
     alias: {
         '@ui':      __dirname + '/src/components/ui',
         '@widgets': __dirname + '/src/components/widgets',
-        '@widgets': __dirname + '/api',
+        '@api': __dirname + '/src/api',
         '@context': __dirname + '/src/context',
 
     }
