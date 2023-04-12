@@ -12,7 +12,7 @@ export const CalcProvider = ({ children }) => {
 
 
   return (
-    <CalcContext.Provider value={{ state }}>
+    <CalcContext.Provider value={{ state, dispatch }}>
         {children}
     </CalcContext.Provider>
   )
