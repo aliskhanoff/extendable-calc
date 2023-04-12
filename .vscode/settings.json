@@ -1,0 +1,13 @@
+{
+    "editor.fontFamily": "Fira Code Medium, monospace",
+    "editor.fontWeight": 100,
+    "editor.fontLigatures": true,
+    "terminal.integrated.fontFamily": "monospace",
+    "files.autoSave": "onFocusChange",
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
+    "conventionalCommits.scopes": [
+        "items separated from board",
+    ]
+}
