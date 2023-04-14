@@ -31,11 +31,13 @@ export const removeLast = function (pattern) {
 
 export const normalize = function (pattern) {
     
+    pattern = pattern.toString()
+
     if(pattern.match(/\d+\.[0]{1,}$/)) {
         return pattern.split(".")[0]
     }
 
-    else if(pattern.at(-1) === '.') {
+    else if(pattern?.at(-1) === '.') {
         return removeLast(pattern)
     }
 
