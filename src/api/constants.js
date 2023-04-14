@@ -1,6 +1,7 @@
 export const REGEX_NUM = /^\d+(\.(?=)\d+){0,1}$/
 
 export const ADD = 'ADD'
+export const SQRT = 'SQRT'
 export const SUB = 'SUB'
 export const DIV = 'DIV'
 export const MUL = 'MUL'
