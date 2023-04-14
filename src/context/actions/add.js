@@ -31,7 +31,7 @@ export const addAction = (state) => {
         return {
             ...state,
             operation: ADD,
-            memory: $operations.calculate(operation, [expression, memory]),
+            memory: $operations.calculate(operation, [memory, expression]),
             expression: "0"
         }
     }

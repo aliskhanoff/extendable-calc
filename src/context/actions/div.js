@@ -32,7 +32,7 @@ export const divAction = (state) => {
         return {
             ...state,
             operation: DIV,
-            memory: $operations.calculate(operation, [expression, memory]),
+            memory: $operations.calculate(operation, [memory, expression]),
             expression: "0"
         }
     }

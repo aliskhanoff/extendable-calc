@@ -18,7 +18,6 @@ export const operations = function (defaultOperations = _defaultOperations) {
         
         calculate: (operation, [first, second = 0]) => {
             const _operation = operations.find(op => op.at(0) === operation).at(1)
-            console.log(first, second, _operation(toNumber(first), toNumber(second)));
             return _operation ? _operation(toNumber(second), toNumber(first)) : null
         }
     }

@@ -31,7 +31,7 @@ export const subAction = (state) => {
         return {
             ...state,
             operation: SUB,
-            memory: $operations.calculate(operation, [expression, memory]),
+            memory: $operations.calculate(operation, [memory, expression]),
             expression: "0"
         }
     }

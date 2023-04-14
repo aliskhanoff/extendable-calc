@@ -32,7 +32,7 @@ export const mulAction = (state) => {
         return {
             ...state,
             operation: MUL,
-            memory: $operations.calculate(operation, [expression, memory]),
+            memory: $operations.calculate(operation, [memory, expression]),
             expression: "0"
         }
     }
