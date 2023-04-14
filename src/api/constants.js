@@ -1,35 +1,43 @@
 export const REGEX_NUM = /^\d+(\.(?=)\d+){0,1}$/
 
-export const ADD = '+'
-export const SUB = '-'
-export const DIV = '/'
-export const MUL = '*'
-export const PNT = '.'
+export const ADD = 'ADD'
+export const SUB = 'SUB'
+export const DIV = 'DIV'
+export const MUL = 'MUL'
+export const PNT = 'FLOAT'
 
 export const EQM = 'EQUALITY_MARK'
 
 export const CLR = 'CLEAR'
 export const RMC = 'REMOVE_CHAR'
+export const APPEND_NUM = 'APPEND_NUM'
 
-String.prototype.toNumber = function () {
+export const toNumber = function (pattern) {
 
-    if(!this.match(REGEX_NUM)) {return null;}
+    pattern = pattern.toString();
 
-    if(this.includes('.')) {
-        return parseFloat(this)
+    if(!pattern.match(REGEX_NUM)) { return null; }
+
+    if(pattern.includes('.')) {
+        return parseFloat(pattern)
     }
 
-    return parseInt(this);
+    return parseInt(pattern);
 }
 
-String.prototype.removeLast = function () {
-    return this.substring(0, this.length - ONE)
+export const removeLast = function (pattern) {
+    return pattern.substring(0, pattern.length - ONE)
 }
 
-String.prototype.normalize = function () {
-    if(this.match(/\d+\.[0]{1,}$/)) {
-        return this.split(".")[0]
+export const normalize = function (pattern) {
+    
+    if(pattern.match(/\d+\.[0]{1,}$/)) {
+        return pattern.split(".")[0]
     }
 
-    return this;
+    else if(pattern.at(-1) === '.') {
+        return removeLast(pattern)
+    }
+
+    return pattern;
 }
