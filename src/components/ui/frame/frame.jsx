@@ -1,8 +1,9 @@
 import React from 'react'
 import './styles/frame.scss'
 import { NumericButton, ActionButton, Display, ButtonBase } from '@ui'
-import {  CLR, SUB, ADD, DIV, MUL, EQM } from '@api'
-
+import {  CLR, SUB, ADD, DIV, MUL, EQM, SQRT } from '@api'
+import { TbSquareRoot2, TbPlusMinus } from 'react-icons/tb'
+import { RiDeleteBack2Line } from 'react-icons/ri'
 
 export const Frame = ({ className = '', display, left, right, footer, ...rest }) => {
 
@@ -17,7 +18,7 @@ export const Frame = ({ className = '', display, left, right, footer, ...rest })
 
             <div className="left relative rounded-lg h-40 grid gap-1 grid-cols-3 grid-rows-4 grow-[3]">
                 
-                <ActionButton className={`bg-orange-400`} action={{ type: CLR }}> C </ActionButton>
+                <ActionButton action={{ type: CLR }}> C </ActionButton>
                 <ActionButton action={{ type: SUB }}>-</ActionButton>
                 <ActionButton action={{ type: ADD }}>+</ActionButton>
                 {left}
@@ -36,10 +37,12 @@ export const Frame = ({ className = '', display, left, right, footer, ...rest })
 
         </main>
 
-        <footer className="footer py-2 self-center inline-flex w-full bg-slate-100 h-auto">
-            
-            
-            
+        <footer className="footer py-2 self-center w-full h-auto grid grid-cols-4 gap-1 grid-rows-1">
+                <ActionButton action={{ type: SQRT }}><TbSquareRoot2 /></ActionButton>
+                <ActionButton action={{ type: ADD }}><TbPlusMinus /></ActionButton>
+                <ActionButton action={{ type: ADD }}><RiDeleteBack2Line /></ActionButton>
+                <ActionButton action={{ type: ADD }}>-</ActionButton>
+
             {footer}
 
         </footer>
