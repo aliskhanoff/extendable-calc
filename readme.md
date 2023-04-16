@@ -9,7 +9,6 @@
 
 [![Status](https://img.shields.io/badge/status-active-success.svg?style=for-the-badge&logo=appveyor)]()
 
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg?style=for-the-badge&logo=appveyor)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
 [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg?style=for-the-badge&logo=appveyor)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge&logo=appveyor)](/LICENSE)
 
@@ -17,10 +16,10 @@
 
 ---
 
-<p align="center"> 
-    Calculator app, that can be extanded.
-    <br> 
-</p>
+# 🧮  Calc app that can be extanded.
+
+
+
 
 ## 📝 Table of Contents
 
