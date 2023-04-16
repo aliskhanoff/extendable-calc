@@ -12,6 +12,13 @@ export const backspace = (state) => {
         }
     }
     
+    else if(/^\d$/.test(expression.toString())) {
+        return {
+            ...state,
+            expression: 0
+        }
+    }
+
     else if(expression == 0) {
         return state;
     }
