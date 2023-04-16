@@ -1,7 +1,7 @@
 import React from 'react'
-import { APPEND_NUM, CLR, ADD, DIV, SUB, MUL, EQM } from '@api'
+import { APPEND_NUM, CLR, ADD, DIV, SUB, MUL, EQM, SQRT } from '@api'
+import { addAction, divAction, subAction, mulAction, eqmAction, sqrtAction } from './actions'
 import { toNumber, normalize, operations } from '@api'
-import { addAction, divAction, subAction, mulAction, eqmAction } from './actions'
 
 
 export const CalcContext = React.createContext(null)
@@ -54,6 +54,8 @@ const reducer = (state, { type, payload }) => {
         case DIV: { return divAction(state) }
 
         case MUL: { return mulAction(state) }
+        
+        case SQRT: { return sqrtAction(state) }
 
         default: return state;
 
