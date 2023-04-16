@@ -14,6 +14,7 @@ export const EQM = 'EQUALITY_MARK'
 export const CLR = 'CLEAR'
 export const RMC = 'REMOVE_CHAR'
 export const APPEND_NUM = 'APPEND_NUM'
+export const BACKSPACE = 'BACKSPACE'
 
 export const toNumber = function (pattern) {
 

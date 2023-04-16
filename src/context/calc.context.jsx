@@ -1,6 +1,6 @@
 import React from 'react'
-import { APPEND_NUM, CLR, ADD, DIV, SUB, MUL, EQM, SQRT, CHANGE_SIGN } from '@api'
-import { addAction, divAction, subAction, mulAction, eqmAction, sqrtAction, changeSign } from './actions'
+import { APPEND_NUM, CLR, ADD, DIV, SUB, MUL, EQM, SQRT, CHANGE_SIGN, BACKSPACE } from '@api'
+import { addAction, divAction, subAction, mulAction, eqmAction, sqrtAction, changeSign, backspace } from './actions'
 import { toNumber, normalize, operations } from '@api'
 
 
@@ -58,6 +58,8 @@ const reducer = (state, { type, payload }) => {
         case SQRT: { return sqrtAction(state) }
 
         case CHANGE_SIGN: { return changeSign(state) }
+        
+        case BACKSPACE: { return backspace(state) }
 
         default: return state;
 
