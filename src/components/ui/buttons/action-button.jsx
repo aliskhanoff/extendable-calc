@@ -7,10 +7,7 @@ export const ActionButton = ({ className = "", action, children, ...rest }) => {
 
     const { dispatch, state: { operation } } = useContext(CalcContext)
     
-
-    // {  }
-
-    return (<ButtonBase onClick={ () => dispatch(action) } {...rest} className={` ${operation === action.type && 'bg-emerald-200 hover:bg-emerald-300 text-emerald-600'} ${className}`} href="">{ children }</ButtonBase>)
+    return (<ButtonBase onClick={ () => dispatch(action) } {...rest} className={`${className}`}>{ children }</ButtonBase>)
 }
 
 export default ActionButton
