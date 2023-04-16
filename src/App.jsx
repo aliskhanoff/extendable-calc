@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Frame, NumericButton} from '@ui'
-
+import { CalcContext } from '@context'
 
 export const App = () => {
 
+  const { state: { theme } } = useContext(CalcContext)
+
   return (
-    <div className="calc__app font_calc flex justify-center items-center bg-slate-100 w-full h-[100vh] text-slate-300">
+    <div className={`${theme}`}>
+    <div className={`calc__app font_calc flex justify-center items-center h-screen bg-slate-100 dark:bg-slate-600`}>
         
         <Frame left={
           <React.Fragment>
@@ -21,6 +24,7 @@ export const App = () => {
           </React.Fragment>
         } />
 
+    </div>
     </div>
   )
 }

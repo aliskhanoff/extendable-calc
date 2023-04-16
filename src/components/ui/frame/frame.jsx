@@ -1,6 +1,6 @@
 import React from 'react'
 import './styles/frame.scss'
-import { NumericButton, ActionButton, Display, ButtonBase } from '@ui'
+import { NumericButton, ActionButton, Display, ThemeButton } from '@ui'
 import {  CLR, SUB, ADD, DIV, MUL, EQM, SQRT, CHANGE_SIGN, BACKSPACE } from '@api'
 import { TbSquareRoot2, TbPlusMinus } from 'react-icons/tb'
 import { RiDeleteBack2Line } from 'react-icons/ri'
@@ -8,13 +8,13 @@ import { RiDeleteBack2Line } from 'react-icons/ri'
 export const Frame = ({ className = '', display, left, right, footer, ...rest }) => {
 
   return (
-    <section {...rest} className={ `frame transition-[scale] md:scale-125 lg:scale-150 shadow-sm gap-1 ${className}` }>
+    <section {...rest} className={ `frame md:scale-125 dark:bg-slate-700 lg:scale-150 shadow-sm gap-1 transition-colors ${className}` }>
         
-        <header className="header inline-flex flex-col w-full px-1 justify-end items-end font_calc bg-slate-100 hover:text-slate-500 transition-colors">
+        <header className="header inline-flex flex-col w-full px-1 justify-end items-end font_calc text-slate-400 bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-500 hover:text-slate-900 transition-colors ">
             <Display />
         </header>
 
-        <main className="main flex gap-1 py-1">
+        <main className="main flex gap-1 py-1 ">
 
             <div className="left relative rounded-lg h-40 grid gap-1 grid-cols-3 grid-rows-4 grow-[3]">
                 
@@ -41,7 +41,8 @@ export const Frame = ({ className = '', display, left, right, footer, ...rest })
                 <ActionButton action={{ type: SQRT }}><TbSquareRoot2 /></ActionButton>
                 <ActionButton action={{ type: CHANGE_SIGN }}><TbPlusMinus /></ActionButton>
                 <ActionButton action={{ type: BACKSPACE }}><RiDeleteBack2Line /></ActionButton>
-                <ActionButton action={{ type: "" }}>-</ActionButton>
+                <ThemeButton />
+                
             {footer}
 
         </footer>

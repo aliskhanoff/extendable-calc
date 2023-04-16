@@ -1,5 +1,5 @@
-import React from 'react'
-import { APPEND_NUM, CLR, ADD, DIV, SUB, MUL, EQM, SQRT, CHANGE_SIGN, BACKSPACE } from '@api'
+import React, { useEffect } from 'react'
+import { APPEND_NUM, CLR, ADD, DIV, SUB, MUL, EQM, SQRT, CHANGE_SIGN, BACKSPACE, USER_THEME, USER_THEME_LIGHT, USER_THEME_DARK } from '@api'
 import { addAction, divAction, subAction, mulAction, eqmAction, sqrtAction, changeSign, backspace } from './actions'
 import { toNumber, normalize, operations } from '@api'
 
@@ -10,6 +10,29 @@ export const CalcContext = React.createContext(null)
 const reducer = (state, { type, payload }) => {
 
     switch (type) {
+
+        case USER_THEME: {
+           
+          const current_theme = state.theme;
+
+           if(current_theme == USER_THEME_LIGHT && payload == USER_THEME_DARK) {
+
+              localStorage.setItem(USER_THEME, USER_THEME_DARK)
+
+              return {
+                  ...state,
+                  theme: USER_THEME_DARK
+              }
+           }
+
+            localStorage.setItem(USER_THEME, USER_THEME_LIGHT)
+            
+              return {
+                ...state,
+                theme: USER_THEME_LIGHT
+              }
+
+        }
 
         case APPEND_NUM: {
 
@@ -69,10 +92,7 @@ const reducer = (state, { type, payload }) => {
 
 export const CalcProvider = ({ children }) => {
   
-
-  const [state, dispatch] = React.useReducer(reducer, { expression: 0, memory: 0, operation: false })
-
-
+  const [state, dispatch] = React.useReducer(reducer, { expression: 0, memory: 0, operation: false, theme: localStorage.getItem(USER_THEME) || USER_THEME_LIGHT  })
 
   return (
     <CalcContext.Provider value={{ state, dispatch }}>

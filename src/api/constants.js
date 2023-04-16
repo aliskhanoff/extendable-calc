@@ -16,6 +16,10 @@ export const RMC = 'REMOVE_CHAR'
 export const APPEND_NUM = 'APPEND_NUM'
 export const BACKSPACE = 'BACKSPACE'
 
+export const USER_THEME         = "USER_THEME"
+export const USER_THEME_LIGHT   = "light"
+export const USER_THEME_DARK    = "dark"
+
 export const toNumber = function (pattern) {
 
     pattern = pattern.toString();
