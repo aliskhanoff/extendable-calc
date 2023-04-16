@@ -17,8 +17,8 @@ export const eqmAction = (state) => {
 
     return  {
         ...state,
-        memory: $operations.calculate(operation, [expression, memory]),
-        expression: "0",
+        expression: $operations.calculate(operation, [expression, memory]),
+        memory: "0",
         operation: false
     }
 
