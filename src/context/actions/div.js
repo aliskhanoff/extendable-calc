@@ -11,8 +11,14 @@ export const divAction = (state) => {
     const { operation, expression, memory } = state;
     const $operations = operations()
 
-
-    if(!operation && !memory) {
+    if((!operation && memory == 0) && expression) {
+        return {
+            ...state,
+            operation: DIV,
+            memory: normalize(expression),
+            expression: 0
+        }
+    } else if(!operation && !memory) {
         return {
             ...state,
             operation: DIV,

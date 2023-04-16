@@ -1,7 +1,6 @@
 import { ADD, operations, normalize } from '@api'
 
 /**
- * 
  * @param {state} state from context 
  * @param {payload} payload 
  * @returns {state}
@@ -11,7 +10,7 @@ export const addAction = (state) => {
     const { operation, expression, memory } = state;
     const $operations = operations()
 
-    if(!operation && !memory) {
+    if((!operation && memory == 0) && expression) {
         return {
             ...state,
             operation: ADD,
@@ -20,7 +19,7 @@ export const addAction = (state) => {
         }
     }
 
-    else if(!operation) {
+    else  if(!operation) {
         return {
             ...state,
             operation: ADD
