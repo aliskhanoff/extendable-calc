@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import { APPEND_NUM, CLR, ADD, DIV, SUB, MUL, EQM, SQRT, CHANGE_SIGN, BACKSPACE, USER_THEME, USER_THEME_LIGHT, USER_THEME_DARK } from '@api'
-import { addAction, divAction, subAction, mulAction, eqmAction, sqrtAction, changeSign, backspace } from './actions'
+import { APPEND_NUM, PNT, CLR, ADD, DIV, SUB, MUL, EQM, SQRT, CHANGE_SIGN, BACKSPACE, USER_THEME, USER_THEME_LIGHT, USER_THEME_DARK } from '@api'
+import { addAction, divAction, subAction, mulAction, eqmAction, sqrtAction, changeSign, backspace, float, append } from './actions'
 import { toNumber, normalize, operations } from '@api'
 
 
@@ -10,6 +10,8 @@ export const CalcContext = React.createContext(null)
 const reducer = (state, { type, payload }) => {
 
     switch (type) {
+
+        case PNT: { return float(state) }
 
         case USER_THEME: {
            
@@ -34,30 +36,8 @@ const reducer = (state, { type, payload }) => {
 
         }
 
-        case APPEND_NUM: {
-
-            //if we have reached the max length
-            if(state.expression.length > 19) { return state; }
-
-            //if currenly we adding 0 to a 0
-            else if(state.expression == 0 && payload == 0) { return state }
-
-            else if(state.expression == 0) {
-              
-              return {
-                ...state,
-                expression: payload
-              }
-
-            }
-
-            return {
-              ...state,
-              expression: state.expression + payload
-            }
-
-        }
-
+        case APPEND_NUM: { return append(state, { type, payload }) }
+ 
         //clear
         case CLR: {
           return {

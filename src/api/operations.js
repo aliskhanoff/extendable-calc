@@ -1,11 +1,11 @@
 import { MUL, ADD, DIV, SUB, SQRT, toNumber } from "@api"
 
 export const _defaultOperations = [
-    [MUL, (first, second) => first * second],
-    [DIV, (first, second) => first / second],
-    [ADD, (first, second) => first + second],
-    [SUB, (first, second) => first - second],
-    [SQRT, (first, second) => Math.sqrt(first)],
+    [MUL, (first, second) => ((toNumber(first) * toNumber(second)))],
+    [DIV, (first, second) => ((toNumber(first) / toNumber(second)))],
+    [ADD, (first, second) => ((toNumber(first) + toNumber(second)))],
+    [SUB, (first, second) => (((toNumber(first)) - (toNumber(second))))],
+    [SQRT, (first, second) => Math.sqrt(toNumber(first))],
 ]
 
 export const operations = function (defaultOperations = _defaultOperations) {

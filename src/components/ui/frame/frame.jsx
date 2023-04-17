@@ -1,7 +1,7 @@
 import React from 'react'
 import './styles/frame.scss'
 import { NumericButton, ActionButton, Display, ThemeButton } from '@ui'
-import {  CLR, SUB, ADD, DIV, MUL, EQM, SQRT, CHANGE_SIGN, BACKSPACE } from '@api'
+import {  CLR, SUB, ADD, DIV, MUL, EQM, SQRT, CHANGE_SIGN, BACKSPACE, PNT } from '@api'
 import { TbSquareRoot2, TbPlusMinus } from 'react-icons/tb'
 import { RiDeleteBack2Line } from 'react-icons/ri'
 
@@ -37,10 +37,11 @@ export const Frame = ({ className = '', display, left, right, footer, ...rest })
 
         </main>
 
-        <footer className="footer py-2 self-center w-full h-auto grid grid-cols-4 gap-1 grid-rows-1">
+        <footer className="footer py-2 self-center w-full h-auto grid grid-cols-5 gap-1 grid-rows-1">
                 <ActionButton action={{ type: SQRT }}><TbSquareRoot2 /></ActionButton>
                 <ActionButton action={{ type: CHANGE_SIGN }}><TbPlusMinus /></ActionButton>
                 <ActionButton action={{ type: BACKSPACE }}><RiDeleteBack2Line /></ActionButton>
+                <ActionButton action={{ type: PNT }}>.</ActionButton>
                 <ThemeButton />
                 
             {footer}
