@@ -20,13 +20,18 @@ export const USER_THEME         = "USER_THEME"
 export const USER_THEME_LIGHT   = "light"
 export const USER_THEME_DARK    = "dark"
 
+/**
+ * 
+ * @param {The string represents a number} pattern 
+ * @returns number (integer or float)
+ */
 export const toNumber = function (pattern) {
 
     pattern = pattern.toString();
 
     if(!pattern.match(REGEX_NUM)) { return null; }
 
-    if(pattern.includes('.')) {
+    if(/^\d+\.\d+$/.test(pattern)) {
         return parseFloat(pattern)
     }
 
