@@ -20,6 +20,8 @@ export const USER_THEME         = "USER_THEME"
 export const USER_THEME_LIGHT   = "light"
 export const USER_THEME_DARK    = "dark"
 
+export const ONE = 1
+
 /**
  * 
  * @param {The string represents a number} pattern 
