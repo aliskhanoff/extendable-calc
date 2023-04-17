@@ -3,7 +3,7 @@ export const float = (state) => {
     const { expression } = state;
 
     //if we already have . in the number, then skip
-    if(/^\d+\.$/.test(expression)) {
+    if(/^\d+\.$/.test(expression) || /^\d+\.\d+$/.test(expression)) {
         return state;
     }
 
