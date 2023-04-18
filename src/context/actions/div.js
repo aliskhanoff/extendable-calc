@@ -27,10 +27,12 @@ export const divAction = (state) => {
         }
     }
 
-    else if(!operation) {
+    else if(operation) {
         return {
             ...state,
-            operation: DIV
+            expression: 0,
+            operation: DIV,
+            memory: $operations.calculate(operation, [expression, memory]),
         }
     }
 

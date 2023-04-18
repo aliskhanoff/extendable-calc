@@ -28,10 +28,12 @@ export const mulAction = (state) => {
         }
     }
     
-    else if(!operation) {
+    else if(operation) {
         return {
             ...state,
-            operation: MUL
+            expression: 0,
+            operation: MUL,
+            memory: $operations.calculate(operation, [expression, memory]),
         }
     }
     else {

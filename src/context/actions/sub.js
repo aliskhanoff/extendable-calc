@@ -27,10 +27,13 @@ export const subAction = (state) => {
             expression: 0
         }
     }
-    else if(!operation) {
+
+    else if(operation) {
         return {
             ...state,
-            operation: SUB
+            expression: 0,
+            operation: SUB,
+            memory: $operations.calculate(operation, [expression, memory]),
         }
     }
 
