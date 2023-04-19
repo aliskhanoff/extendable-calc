@@ -18,12 +18,21 @@ export const divAction = (state) => {
             memory: normalize(expression),
             expression: 0
         }
-    } else if(!operation && !memory) {
+    } 
+    
+    else if(!operation && !memory) {
         return {
             ...state,
             operation: DIV,
             memory: normalize(expression),
             expression: 0
+        }
+    }
+
+    else if(operation && memory) {
+        return {
+            ...state,
+            operation: DIV,
         }
     }
 
